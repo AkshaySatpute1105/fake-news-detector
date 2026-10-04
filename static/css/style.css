@@ -1,0 +1,69 @@
+:root{
+  --blue-900:#0b2a6f; --blue-700:#1448c9; --blue-600:#1a5cf0; --blue-100:#e6efff; --blue-50:#f4f8ff;
+  --red:#d6314a; --ink:#14213d; --muted:#5b6b88; --radius:16px;
+}
+html{scroll-behavior:smooth; scroll-padding-top:80px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif; color:var(--ink); background:var(--blue-50)}
+.btn-primary{--bs-btn-bg:var(--blue-600); --bs-btn-border-color:var(--blue-600); --bs-btn-hover-bg:var(--blue-700); --bs-btn-hover-border-color:var(--blue-700)}
+.text-primary{color:var(--blue-600)!important}
+.app-nav{background:rgba(255,255,255,.92); backdrop-filter:blur(8px); box-shadow:0 1px 0 #dbe5f8}
+.app-nav .navbar-brand{color:var(--blue-700); font-size:1.25rem}
+.app-nav .nav-link{font-weight:500; color:var(--ink)}
+.app-nav .nav-link:hover{color:var(--blue-600)}
+
+.hero{background:linear-gradient(135deg,var(--blue-900),var(--blue-600)); color:#fff; padding:130px 0 70px}
+.hero-badge{background:rgba(255,255,255,.15); font-weight:500; padding:.55rem 1rem}
+.hero .lead{max-width:560px; opacity:.9}
+.stat-tile{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:var(--radius); padding:1.2rem; height:100%}
+.stat-num{font-size:1.9rem; font-weight:800}
+.hero code{color:#fff}
+
+.section-gap{margin-top:2.5rem}
+#details{margin-top:1.5rem}
+.app-card{border:1px solid #dbe5f8; border-radius:var(--radius); box-shadow:0 6px 24px rgba(20,72,201,.07); background:#fff}
+.article-input{border-radius:12px; border:1.5px solid #cfdcf5; resize:vertical}
+.article-input:focus{border-color:var(--blue-600); box-shadow:0 0 0 .25rem rgba(26,92,240,.15)}
+.empty-icon{font-size:3.5rem; color:#b8c9ee}
+
+/* Result */
+.verdict{display:flex; align-items:center; gap:1rem; padding:1.2rem 1.4rem; border-radius:14px; color:#fff; animation:pop .4s ease}
+.verdict i{font-size:2.6rem}
+.verdict-text{font-size:1.8rem; font-weight:800; line-height:1.1}
+.verdict.real{background:linear-gradient(135deg,#1448c9,#2f7bff)}
+.verdict.fake{background:linear-gradient(135deg,#b3202f,#e8546a)}
+.conf-bar{height:12px; border-radius:99px; background:var(--blue-100)}
+.conf-bar .progress-bar{transition:width .9s cubic-bezier(.2,.8,.2,1); border-radius:99px}
+.conf-bar .progress-bar.real{background:var(--blue-600)}
+.conf-bar .progress-bar.fake{background:var(--red)}
+@keyframes pop{from{opacity:0; transform:scale(.96)}to{opacity:1; transform:none}}
+
+/* Loader */
+.scan-loader{display:flex; justify-content:center; gap:8px}
+.scan-loader span{width:14px; height:14px; border-radius:50%; background:var(--blue-600); animation:bounce 1s infinite ease-in-out}
+.scan-loader span:nth-child(2){animation-delay:.15s}
+.scan-loader span:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,80%,100%{transform:scale(.5); opacity:.4}40%{transform:scale(1.2); opacity:1}}
+
+/* Keywords */
+.kw{display:inline-block; padding:.3rem .7rem; border-radius:99px; font-size:.85rem; font-weight:600}
+.kw-real{background:var(--blue-100); color:var(--blue-700)}
+.kw-fake{background:#fde8eb; color:var(--red)}
+.kw-row{display:flex; align-items:center; gap:.6rem; font-size:.85rem; margin-bottom:.4rem}
+.kw-row .name{width:90px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600}
+.kw-row .track{flex:1; height:8px; background:#eef2fb; border-radius:99px; overflow:hidden}
+.kw-row .fill{height:100%; border-radius:99px}
+.kw-row .fill.real{background:var(--blue-600)} .kw-row .fill.fake{background:var(--red)}
+
+/* Steps */
+.accordion-button{font-weight:600; font-size:.95rem}
+.accordion-button:not(.collapsed){color:var(--blue-700); background:var(--blue-50)}
+.step-text{font-size:.85rem; background:var(--blue-50); border-radius:10px; padding:.8rem; max-height:150px; overflow:auto; word-break:break-word}
+.token{display:inline-block; background:var(--blue-100); color:var(--blue-700); border-radius:6px; padding:.1rem .45rem; margin:.15rem; font-size:.8rem}
+
+.feat{font-size:1.8rem; color:var(--blue-600)}
+.badge-real{background:var(--blue-100); color:var(--blue-700)}
+.badge-fake{background:#fde8eb; color:var(--red)}
+#historyBody tr{animation:pop .3s ease}
+.app-footer{background:var(--blue-900); color:#cfdcff; padding:1.5rem 0; font-size:.9rem}
+@media (max-width:576px){.hero{padding-top:105px}.verdict-text{font-size:1.4rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
